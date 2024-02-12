@@ -1,12 +1,14 @@
 package com.java.assi7;
 
 import java.util.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Logger;
 
 public class EmployeeManagementSystemImpl implements EmployeeManagementSystem {
 	
-	 public static final Logger logger = LogManager.getLogger("com.java.assi7.EmployeeManagementSystemImpl");
+//	 public static final Logger Log = LogManager.getLogger("com.java.assi7.EmployeeManagementSystemImpl");
+	 public static final Logger Log = Logger.getLogger("com.java.assi7.EmployeeManagementSystemImpl");
 	 private Map<Integer, Employee> employees;
 	 
 	 
@@ -20,7 +22,7 @@ public class EmployeeManagementSystemImpl implements EmployeeManagementSystem {
 	public void addEmployee(Employee employee) {
 		// TODO Auto-generated method stub
 		employees.put(employee.getId(), employee);
-        logger.info("Employee added: " + employee);
+		Log.info("Employee added: " + employee);
 		
 	}
 
@@ -28,7 +30,7 @@ public class EmployeeManagementSystemImpl implements EmployeeManagementSystem {
 	public List<Employee> getAllEmployees() {
 		// TODO Auto-generated method stub
 		List<Employee> allEmployees = new ArrayList<>(employees.values());
-        logger.info("Retrieved all employees: " + allEmployees);
+		Log.info("Retrieved all employees: " + allEmployees);
         return allEmployees;
 	}
 
@@ -37,9 +39,9 @@ public class EmployeeManagementSystemImpl implements EmployeeManagementSystem {
 		// TODO Auto-generated method stub
 		Employee employee = employees.get(id);
         if (employee != null) {
-            logger.info("Retrieved employee by ID " + id + ":" + employee);
+        	Log.info("Retrieved employee by ID " + id + ":" + employee);
         } else {
-            logger.warn("Employee with id " + id + " not found");
+        	Log.warn("Employee with id " + id + " not found");
         }
         return employee;
 	}
