@@ -23,7 +23,7 @@ public class EmployeeManagementApp {
         	Log.info(employee);
         }
 
-        int employeeIdToFind = 2;
+        int employeeIdToFind = 4;
         Employee employeeById = employeeManagementSystem.getEmployeeById(employeeIdToFind);
         if (employeeById != null) {
         	Log.info("Employee with ID " + employeeIdToFind + ": " + employeeById);
